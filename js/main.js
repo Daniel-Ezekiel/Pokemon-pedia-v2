@@ -2,7 +2,7 @@
 
 // SEARCH FOR POKEMON USING THE SEARCH INPUT
 document.querySelector("#btn").addEventListener("click", function () {
-  const pokemonName = document.querySelector("#name").value;
+  const pokemonName = document.querySelector("#name").value.toLowerCase();
 
   if (pokemonName) {
     // Remove all existing Pokémon cards
