@@ -55,7 +55,7 @@ function fetchPokemonInformation(pokemonName) {
     })
     .catch((err) => {
       console.log(`error ${err}`);
-      alert("Check your input and enter a valid pokemon name");
+      alert("Pokémon does not exist, check input and try again");
     });
 }
 
