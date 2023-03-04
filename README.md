@@ -1,30 +1,30 @@
 # Pokemon-pedia
+
 This Web Application helps to get more information about any pokemon
 
-**Link to project:** https://pokecardds.netlify.app/
+**Link to version 1 of the project:** [Live link](https://pokemon-pedia-v1.vercel.app/) || [GitHub Repo](https://github.com/Daniel-Ezekiel/Pokemon-pedia.git)
+**Link to version 2 of the project:** [Live link](https://pokemon-pedia-v2.vercel.app/) || [GitHub Repo](https://github.com/Daniel-Ezekiel/Pokemon-pedia-v2.git)
 
 ![alt tag](img/gif1.gif)
 
 ## How It's Made:
 
-**Tech used:** HTML, CSS, JavaScript, Cocktail API
+**Tech used:** HTML, CSS, JavaScript, Pokémon API
+
+This is the second version of this project. Version 1 can be previewed using the links above. The major improvement with this version is that Pokémon are generated on page load at random. Also this current version has a better performance compared to its predecessor. A setTimeout that prevents the modal for some of the card from displaying was taken out and as soon as each card is rendered, it has the ability to create it's own popup with more info on that Pokémon.
 
 This project was built using HTML as the base structure with CSS for the styling. Postman (https://www.postman.com/) was used to test the Pokemon API before it was implemented with the JavaScript. Based on the data obtained from the API, DOM manipulation was carried out to change and display data obtained within the DOM.
 
-The web app provides a form to input a pokemon name and search for that pokemon. The result(s) are then displayed within the DOM. Also, on clicking the search button without any input, it displays random pokemons from the search results and populates the DOM accordingly.
-
-Furthermore, after the pokemon is generated, on clicking any pokemon, a popup is displayed containig more information about the selected pokemon
-
-
 ## Optimizations
 
-A major update required to this web app is to display a notification that tells if a pokemon doesn't exist in the pokemon database. The current state of things is that no result is displayed whatsoever. Also, the code base could be optimised to use OOP as well.
+Based on the optimizations suggested for version 1, now the app displays a notification that informs the user whether a Pokémon exists or not in the database.
 
 ## Lessons Learned:
 
-With this project, my knowledge and command of the use of APIs and async programming became even more solid, as well as with creating new elements and populating the DOM as necessary. Also
+With this project, my knowledge and command of the use of APIs has become more solid, as well as with creating new elements and populating the DOM as necessary. Also, I have improved in code debugging and performance improvement.
 
-## Examples:
+## Other Projects:
+
 Take a look at a few other projects that I have in my own repository:
 
 **Edie Agency:** https://github.com/daniel-ezekiel/edie-agency-website
