@@ -16,11 +16,6 @@ document.querySelector("#btn").addEventListener("click", function (e) {
   }
 });
 
-// USE ENTER KEY TO SEARCH
-document
-  .querySelector("#name")
-  .addEventListener("keyup", searchAndDisplayPokémon);
-
 // ON PAGE LOAD, DISPLAY 40 Pokémons
 fetch(`https://pokeapi.co/api/v2/pokemon/?limit=240`)
   .then((res) => res.json()) // parse response as JSON
