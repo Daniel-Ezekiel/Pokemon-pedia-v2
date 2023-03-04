@@ -2,8 +2,9 @@
 
 This Web Application helps to get more information about any pokemon
 
-**Link to version 1 of the project:** [Live link](https://pokemon-pedia-v1.vercel.app/) || [GitHub Repo](https://github.com/Daniel-Ezekiel/Pokemon-pedia.git)
-**Link to version 2 of the project:** [Live link](https://pokemon-pedia-v2.vercel.app/) || [GitHub Repo](https://github.com/Daniel-Ezekiel/Pokemon-pedia-v2.git)
+**Links to version 1 of the project:** [Live link](https://pokemon-pedia-v1.vercel.app/) || [GitHub Repo](https://github.com/Daniel-Ezekiel/Pokemon-pedia.git)
+<br>
+**Links to version 2 of the project:** [Live link](https://pokemon-pedia-v2.vercel.app/) || [GitHub Repo](https://github.com/Daniel-Ezekiel/Pokemon-pedia-v2.git)
 
 ![alt tag](img/gif1.gif)
 
