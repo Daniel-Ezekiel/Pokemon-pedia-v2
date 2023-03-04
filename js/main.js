@@ -1,7 +1,9 @@
 "use strict";
 
 // SEARCH FOR POKEMON USING THE SEARCH INPUT
-document.querySelector("#btn").addEventListener("click", function () {
+document.querySelector("#btn").addEventListener("click", function (e) {
+  e.preventDefault();
+
   const pokemonName = document.querySelector("#name").value.toLowerCase();
 
   if (pokemonName) {
@@ -13,6 +15,11 @@ document.querySelector("#btn").addEventListener("click", function () {
     fetchPokemonInformation(pokemonName);
   }
 });
+
+// USE ENTER KEY TO SEARCH
+document
+  .querySelector("#name")
+  .addEventListener("keyup", searchAndDisplayPokémon);
 
 // ON PAGE LOAD, DISPLAY 40 Pokémons
 fetch(`https://pokeapi.co/api/v2/pokemon/?limit=240`)
