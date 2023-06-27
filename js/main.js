@@ -1,4 +1,6 @@
-"use strict";
+("use strict");
+
+const randomStart = Math.ceil(Math.random() * (1281 - 40));
 
 // SEARCH FOR POKEMON USING THE SEARCH INPUT
 document.querySelector("#btn").addEventListener("click", function (e) {
@@ -17,33 +19,16 @@ document.querySelector("#btn").addEventListener("click", function (e) {
 });
 
 // ON PAGE LOAD, DISPLAY 40 Pokémons
-fetch(`https://pokeapi.co/api/v2/pokemon/?limit=240`)
+fetch(`https://pokeapi.co/api/v2/pokemon/?limit=40&offset=${randomStart}`)
   .then((res) => res.json()) // parse response as JSON
   .then((data) => {
-    // Randomize results from API request and store in an array
-    let pokemonArr = randomizeSearch(data.results);
+    let pokemonArr = data.results;
     // For each element in the array, fetch and display the Pokémon card using the Pokémon name
     pokemonArr.forEach((pokemon) => fetchPokemonInformation(pokemon.name));
   })
   .catch((err) => {
     console.log(`error ${err}`);
   });
-
-// RANDOMIZE THE RESULTS TO DISPLAY ON PAGE LOAD
-function randomizeSearch(arr) {
-  const chance = Math.random() * 6;
-  return chance <= 1
-    ? (arr = arr.slice(arr.length - 40))
-    : chance <= 2
-    ? (arr = arr.slice(arr.length - 80, arr.length - 40))
-    : chance <= 3
-    ? (arr = arr.slice(arr.length - 120, arr.length - 80))
-    : chance <= 4
-    ? (arr = arr.slice(arr.length - 160, arr.length - 120))
-    : chance <= 5
-    ? (arr = arr.slice(arr.length - 200, arr.length - 160))
-    : (arr = arr.slice(0, arr.length - 200));
-}
 
 // FETCH Pokémon INFORMATION USING THE Pokémon NAME
 function fetchPokemonInformation(pokemonName) {
@@ -285,3 +270,4 @@ function showPopup() {
     document.querySelector(".details-overall-container").remove();
   });
 }
+
