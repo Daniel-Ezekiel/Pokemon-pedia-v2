@@ -19,31 +19,36 @@ document.querySelector("#btn").addEventListener("click", function (e) {
 });
 
 // ON PAGE LOAD, DISPLAY 40 Pokémons
-fetch(`https://pokeapi.co/api/v2/pokemon/?limit=40&offset=${randomStart}`)
-  .then((res) => res.json()) // parse response as JSON
-  .then((data) => {
+async function fetchPokemon() {
+  try {
+    const res = await fetch(
+      `https://pokeapi.co/api/v2/pokemon/?limit=40&offset=${randomStart}`
+    );
+    const data = await res.json();
+    console.log(data.count, data.results);
+
     let pokemonArr = data.results;
     // For each element in the array, fetch and display the Pokémon card using the Pokémon name
-    pokemonArr.forEach((pokemon) => fetchPokemonInformation(pokemon.name));
-  })
-  .catch((err) => {
+    pokemonArr.forEach((pokemon) => fetchPokemonInfo(pokemon.name));
+  } catch (err) {
     console.log(`error ${err}`);
-  });
+    alert("Pokémon does not exist, check input and try again");
+  }
+}
+fetchPokemon();
 
 // FETCH Pokémon INFORMATION USING THE Pokémon NAME
-function fetchPokemonInformation(pokemonName) {
-  const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
+async function fetchPokemonInfo(pokemonName) {
+  try {
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
+    const res = await fetch(url);
+    const data = await res.json();
 
-  fetch(url)
-    .then((res) => res.json()) // parse response as JSON
-    .then((data) => {
-      // Call the createAndShowCard function to populate the DOM with the results;
-      createAndShowCard(data);
-    })
-    .catch((err) => {
-      console.log(`error ${err}`);
-      alert("Pokémon does not exist, check input and try again");
-    });
+    createAndShowCard(data);
+  } catch (err) {
+    console.log(`error ${err}`);
+    alert("Pokémon does not exist, check input and try again");
+  }
 }
 
 function createAndShowCard(data) {
