@@ -14,7 +14,7 @@ document.querySelector("#btn").addEventListener("click", function (e) {
     allCards.forEach((card) => card.remove());
 
     // Fetch the Pokémon information and display the Pokémon card
-    fetchPokemonInformation(pokemonName);
+    fetchPokemonInfo(pokemonName);
   }
 });
 
